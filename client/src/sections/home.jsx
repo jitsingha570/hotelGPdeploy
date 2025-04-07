@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Imghome1 from "../assets/pictures/Imghome1.jpg";
 import Imghome2 from "../assets/webpPhoto/about1.webp";
-
+import {Link} from "react-router-dom";
 
 const images = [Imghome1, Imghome2];
 const fullText = "Picture your next amazing stay";
@@ -124,10 +124,12 @@ function Home() {
           a memorable stay while enjoying your Best. Year. Yet. with savings of
           up to 40% on your room rate. Terms apply.
         </p>
-
-        <button className="w-48 h-10 mt-2 px-4 border border-white text-white hover:bg-white hover:text-black transition-all duration-300">
+        <Link to="/Gallery">
+        <button className="w-48 h-10 mt-2 px-4 border border-white text-white  bg-black hover:bg-white hover:text-black transition-all duration-300">
           EXPLORE
         </button>
+        </Link>
+        
       </div>
     </div>
   );
