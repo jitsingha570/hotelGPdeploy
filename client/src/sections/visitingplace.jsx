@@ -44,7 +44,7 @@ const Visitingplace = () => {
       </AnimatePresence>
 
       {/* Content Overlay */}
-      <div className="relative z-10 w-full py-20 px-4 md:px-16 bg-black/40 backdrop-blur-sm">
+      <div className="relative z-10 w-full py-20 px-4 md:px-16 bg-black/40 backdrop-blur-sm ">
       <div className="felx md:item-center md:justify-center md:relative md:left-30 md:pb-10 "><h2 className="text-4xl text-white font-bold mb-2">NEARBY VISITING PLACES</h2> </div>
       
         {cards.map((card, index) => {
@@ -67,7 +67,7 @@ const Visitingplace = () => {
               </div>
 
               {/* Details */}
-              <div className="glass p-6 rounded-xl bg-yellow-200/60 backdrop-blur-md shadow-md w-full md:w-150  hover:shadow-xl transition-all">
+              <div className="glass p-6 rounded-xl bg-yellow-200/60  shadow-md w-full md:w-150  hover:shadow-xl transition-all">
                 <h2 className="text-2xl text-blue-900 font-bold mb-2">{card.name}</h2>
                 <p className="text-sm text-red-800 mb-2">{card.description}</p>
                 <p className="text-sm text-gray-700 mb-4">{card.distance}</p>

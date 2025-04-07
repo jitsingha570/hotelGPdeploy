@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Imghome1 from "../assets/pictures/Imghome1.jpg";
 import Imghome2 from "../assets/webpPhoto/about1.webp";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const images = [Imghome1, Imghome2];
 const fullText = "Picture your next amazing stay";
@@ -82,7 +82,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen flex justify-center items-center overflow-hidden md:pb-20">
+    <div className="relative w-full min-h-screen md:h-150 flex justify-center items-center overflow-hidden md:pb-20">
       {/* Background image slider */}
       <img
         src={images[currentImageIndex]}
@@ -91,12 +91,12 @@ function Home() {
       />
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full  z-10" />
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10 backdrop-blur-none" />
 
       {/* Right side stats */}
-      <div className="absolute right-10 top-[50%]  translate-y-[-50%] z-30 text-white space-y-6 text-right bg-black/20">
-        <div >
-          <h2 className="text-5xl font-bold ">{guestCount}+</h2>
+      <div className="  absolute right-10 top-[25%] md:top-[50%] translate-y-[-50%] z-30 text-white space-y-6 text-right bg-black/20 p-4 rounded-xl shadow-lg">
+        <div>
+          <h2 className="text-5xl font-bold">{guestCount}+</h2>
           <p className="text-sm">Guests Satisfied</p>
         </div>
         <div>
@@ -110,26 +110,39 @@ function Home() {
       </div>
 
       {/* Main content */}
-      <div className="z-20 flex flex-col items-center justify-center text-center text-white px-4 mt-[500px]">
+      <div className="z-20 flex flex-col items-center justify-center text-center text-white md:relative md:bottom-15 px-4 mt-[500px]">
         <div className="bg-transparent backdrop-blur-md p-6 rounded-md shadow-md max-w-2xl w-full mb-4">
-          <h1 className="text-2xl md:text-4xl font-bold text-white font-mono">
+          <h1 className="text-3xl md:text-6xl font-bold text-white font-serif mb-4">
             {typedText}
             <span className="animate-pulse">|</span>
           </h1>
         </div>
 
-        <p className="max-w-lg text-sm leading-5 font-light mb-4">
-          Escape to Impression Isla Mujeres by Secrets, named “The Most
-          Instagrammable Hotel in the World” by Luxury Travel Advisor. Make it
-          a memorable stay while enjoying your Best. Year. Yet. with savings of
-          up to 40% on your room rate. Terms apply.
+        {/* Luxury description */}
+        <p className="max-w-2xl text-base md:text-lg font-light text-gray-100 leading-relaxed mb-6">
+          Discover timeless elegance at our 5-star sanctuary, where every detail
+          is crafted for your ultimate comfort. Experience the pinnacle of
+          luxury, with oceanfront views, fine dining, and personalized service.
         </p>
+
+        {/* Feature badges */}
+        <div className="flex flex-wrap justify-center gap-3 mb-6">
+          {["5-Star Rated", "Infinity Pool", "Ocean View", "Gourmet Dining", "Luxury Spa"].map((feature) => (
+            <span
+              key={feature}
+              className="px-4 py-1 bg-white/10 text-white border border-white/30 rounded-full text-sm hover:bg-white/20 transition-all"
+            >
+              {feature}
+            </span>
+          ))}
+        </div>
+
+        {/* Button */}
         <Link to="/Gallery">
-        <button className="w-48 h-10 mt-2 px-4 border border-white text-white  bg-black hover:bg-white hover:text-black transition-all duration-300">
-          EXPLORE
-        </button>
+          <button className="w-52 h-12 mt-2 px-4 text-lg border-2 border-white text-white bg-gradient-to-r from-black/70 to-black/30 backdrop-blur-sm hover:bg-white hover:text-black transition-all duration-300 rounded-full shadow-md">
+              EXPLORE
+          </button>
         </Link>
-        
       </div>
     </div>
   );

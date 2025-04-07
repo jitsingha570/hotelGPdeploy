@@ -17,7 +17,7 @@ import Visitingplace from "./sections/visitingplace";
 import Booking from "./pages/booking";
 import Aboutus from "./pages/aboutus";
 import Gallery from "./pages/Gallery";
-
+import Featurespage from "./sections/featurespage";
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
               <>
              
                 <Home />
-                
+               
                 <Visitingplace />
                 
                 <Service />
