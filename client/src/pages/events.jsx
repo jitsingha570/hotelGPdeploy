@@ -26,17 +26,17 @@ function Events() {
 
 
 
-       <div className='flex flex-col w-full h-450 bg-orange-200 items-center   '>
-          <div className='flex flex-col md:flex-row   items-center w-5/6 h-130  bg-white mt-10 shadow-lg'>
+       <div className='flex flex-col w-full h-480 bg-orange-200 items-center   '>
+          <div className='flex flex-col md:flex-row   items-center w-5/6 h-150  bg-white mt-10 shadow-lg'>
            
            <img src={Imgevent2} alt="wedding events img" className='w-9/10 h-50 md:w-200 md:h-100 md:ml-10 md:my-10 pt-2' />
             <div className='flex flex-col   items-center w-5/6 h-50 bg-white md:px-8 mt-4'>
              <h2 className='text-black font-bold text-xl pt-4 mb-4'>WEDDING HALL</h2>
               <p >"Our elegant wedding hall offers a luxurious setting for your special day, with beautiful décor, spacious seating, and customizable arrangements. Perfect for grand celebrations or intimate ceremonies, we ensure a memorable experience with dedicated service and attention to detail."</p>
-              <Link to='/booking' state={{roomname:" Wedding hall" }}><button className='bg-transparent text-red-700 shadow-md hover:bg-red-500 hover:text-red transition-all border border-red-700 w-60 mt-10'> BOOK</button>
+              <Link to='/booking' state={{roomname:" Wedding hall" }}><button className='bg-transparent text-red-700 shadow-md hover:bg-red-500 hover:text-white transition-all border border-red-700 w-60 mt-10'> GET A CUSTOME PRICE</button>
               </Link>
               
-              <button className='bg-transparent text-red-700 shadow-md hover:bg-red-500 hover:text-red transition-all border border-red-700 w-60 mt-4'> EXPLORE</button>
+              <button className='bg-transparent text-red-700 shadow-md hover:bg-red-500 hover:text-white transition-all border border-red-700 w-60 mt-4'> EXPLORE</button>
              </div>
            
 
@@ -45,16 +45,16 @@ function Events() {
 
 
           </div>
-          <div className='flex flex-col md:flex-row   items-center w-5/6 h-130  bg-white mt-10 shadow-lg'>
+          <div className='flex flex-col md:flex-row   items-center w-5/6 h-160  bg-white mt-10 shadow-lg'>
            
            <img src={Imgevent3} alt="wedding events img" className='flex w-9/10 h-50 md:w-200 md:h-100 md:ml-10 md:my-10 pt-2' />
             <div className='flex flex-col   items-center w-5/6 h-50 bg-white md:px-8 mt-4'>
              <h2 className='text-black font-bold text-xl pt-4 mb-4'>WEDDING HALL</h2>
               <p >"Our hotel offers a state-of-the-art conference hall equipped with modern AV technology, comfortable seating, and customizable layouts. Ideal for business meetings, seminars, and events, we provide professional support to ensure a seamless and productive experience for all attendees."</p>
-              <Link to='/booking' state={{roomname:"conference hall" }}><button className='bg-transparent text-red-700 shadow-md hover:bg-red-500 hover:text-red transition-all border border-red-700 w-60 mt-10'> BOOK</button>
+              <Link to='/booking' state={{roomname:"conference hall" }}><button className='bg-transparent text-red-700 shadow-md hover:bg-red-500 hover:text-white transition-all border border-red-700 w-60 mt-10'> GET A CUSTOME PRICE</button>
               </Link>
              
-              <button className='bg-transparent text-red-700 shadow-md hover:bg-red-500 hover:text-red transition-all border border-red-700 w-60 mt-4'> EXPLORE</button>
+              <button className='bg-transparent text-red-700 shadow-md hover:bg-red-500 hover:text-white transition-all border border-red-700 w-60 mt-4'> EXPLORE</button>
              </div>
            
           </div>

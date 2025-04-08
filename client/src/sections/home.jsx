@@ -87,7 +87,7 @@ function Home() {
       <img
         src={images[currentImageIndex]}
         alt="Slider"
-        className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-90"
+        className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-90 "
       />
 
       {/* Overlay */}
@@ -110,7 +110,7 @@ function Home() {
       </div>
 
       {/* Main content */}
-      <div className="z-20 flex flex-col items-center justify-center text-center text-white md:relative md:bottom-15 px-4 mt-[500px]">
+      <div className="z-20 flex flex-col items-center justify-center text-center text-white md:relative md:bottom-15 px-4 mt-[500px] md:pb-10">
         <div className="bg-transparent backdrop-blur-md p-6 rounded-md shadow-md max-w-2xl w-full mb-4">
           <h1 className="text-3xl md:text-6xl font-bold text-white font-serif mb-4">
             {typedText}
