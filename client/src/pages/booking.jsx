@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom'; // ✅ Import useLocation
-import axios from 'axios';
+
+import api from '../utils/api'; // ✅ Use the custom axios instance
 
 function Booking() {
   const location = useLocation();
@@ -30,7 +31,7 @@ function Booking() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5001/api/roombooking', formData);
+      const res = await api.post('roombooking', formData);
       console.log('Booking successful:', res.data);
       alert('Booking submitted successfully!');
       setFormData({

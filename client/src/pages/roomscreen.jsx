@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import Slider from 'react-slick';
-import axios from 'axios';
+import api from '../utils/api'; // ⬅️ use the custom axios instance
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -13,7 +13,7 @@ import Footer from '../sections/footer';
 
 const Roomscreen = () => {
   const [rooms, setRooms] = useState([]);
-  const [error, setError] = useState(false); // for error handling
+  const [error, setError] = useState(false);
 
   const settings = {
     dots: true,
@@ -28,9 +28,9 @@ const Roomscreen = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const res = await axios.get('http://localhost:5001/api/rooms');
+        const res = await api.get('/rooms'); // 👈 simplified path
         setRooms(res.data);
-        setError(false); // clear error if successful
+        setError(false);
       } catch (error) {
         console.error("Failed to fetch rooms", error);
         setError(true);
@@ -46,10 +46,7 @@ const Roomscreen = () => {
         <div className="text-red-600 text-xl font-semibold mt-10">⚠️ Failed to fetch rooms. Please try again later.</div>
       ) : (
         rooms.map((room, index) => (
-          <div
-            key={index}
-            className="flex flex-col md:flex-row bg-white shadow-lg w-4/5 rounded-lg overflow-hidden mb-10 p-6"
-          >
+          <div key={index} className="flex flex-col md:flex-row bg-white shadow-lg w-4/5 rounded-lg overflow-hidden mb-10 p-6">
             <div className="w-full md:w-1/2">
               <Slider {...settings}>
                 <img src={Imgroom1} alt="Room 1" className="w-full h-64 object-cover" />

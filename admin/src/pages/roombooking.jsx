@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
+import api from '../utils/api'; // ⬅️ use the custom axios instance
 
 function Roombooking() {
   const [roombookings, setRoombookings] = useState([]);
@@ -7,7 +8,7 @@ function Roombooking() {
 
   const fetchroomsbooking = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/roombooking');
+      const res = await api.get('/roombooking');
       console.log("Fetched Data:", res.data);
       setRoombookings(res.data);
       setError(false);
@@ -23,7 +24,7 @@ function Roombooking() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/roombooking/${id}`);
+      await api.delete(`/roombooking/${id}`);
       fetchroomsbooking(); // Refresh list
     } catch (err) {
       console.error('Error deleting room:', err);

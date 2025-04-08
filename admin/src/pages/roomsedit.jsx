@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+
+import api from '../utils/api'; // Custom axios instance
 
 const Roomsedit = () => {
   const [rooms, setRooms] = useState([]);
@@ -10,7 +11,7 @@ const Roomsedit = () => {
 
   const fetchRooms = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/rooms');
+      const res = await api.get('/rooms');
       setRooms(res.data);
       setError(false);
     } catch (error) {
@@ -25,7 +26,7 @@ const Roomsedit = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/rooms/${id}`);
+      await api.delete(`/rooms/${id}`);
       fetchRooms();
     } catch (err) {
       console.error('Error deleting room:', err);
@@ -42,9 +43,9 @@ const Roomsedit = () => {
     e.preventDefault();
     try {
       if (isUpdating) {
-        await axios.put(`http://localhost:5001/api/rooms/${currentId}`, form);
+        await api.put(`/rooms/${currentId}`, form);
       } else {
-        await axios.post('http://localhost:5001/api/rooms', form);
+        await api.post('/rooms', form);
       }
       setForm({ roomname: '', roomdescription: '', roomprice: '', roomdiscount: '' });
       setIsUpdating(false);
